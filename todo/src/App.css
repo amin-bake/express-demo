@@ -1,0 +1,25 @@
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.task-form {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
