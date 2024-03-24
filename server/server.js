@@ -1,17 +1,26 @@
 const express = require('express');
+const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
+
 app.use(cors());
+app.use(express.json())
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static files from the React app
-// app.use(express.static(path.join(__dirname, '../todo/public')));
+//connect to DB
+mongoose.connect('mongodb://127.0.0.1/nodeexpressdb',{
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+})
+.then(db => console.log('DB is connected'))
+.catch(err => console.log(err));
+
 
 // API endpoints for tasks
 let tasks = [];
